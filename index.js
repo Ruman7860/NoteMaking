@@ -22,7 +22,10 @@ const _dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({origin:["http://localhost:5173"],credentials:true}));
+app.use(cors({
+    origin: 'https://notemaking-frontend.vercel.app', // Frontend URL
+    credentials: true, // Allow credentials like cookies
+}));
 
 import authRouter from './routes/auth.route.js';
 import noteRouter from './routes/note.route.js';
